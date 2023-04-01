@@ -1,7 +1,6 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "type": "module",
   "description": "[![Actions Status](https://github.com/KoDanny/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/KoDanny/frontend-project-44/actions)",
   "main": "index.js",
   "scripts": {
@@ -9,5 +8,9 @@
   },
   "author": "KoDanny",
   "license": "ISC",
-  "devDependencies": {}
-}
+  "type": "module",
+  "dependencies": {
+    "readline-sync": "^1.4.10",
+  },
+}  
+
