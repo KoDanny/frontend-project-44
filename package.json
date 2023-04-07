@@ -10,6 +10,8 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "brain-even": "^1.0.0",
+    "node": "^19.8.1",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
@@ -23,6 +25,7 @@
     "typescript": "^5.0.3"
   },
   "bin": {
-    "brain-games": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
   }
 }
