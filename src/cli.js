@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 
-const getFirstQuestionsAboutName = () => {
-  const name = readlineSync.question('What is your name?');
-  return `${'Hello'}, ${name}!`;
+const getQuestionsAboutName = () => {
+  const name = readlineSync.question(`${'What is your name? '}`);
+  return name;
 };
 
-export default getFirstQuestionsAboutName;
+export default getQuestionsAboutName;
