@@ -16,7 +16,7 @@ const getGameBrainCalc = () => {
   let correctAnswerCount = 0;
   let result = '';
   for (let i = 1; i <= 3; i += 1) {
-    const firstRandomNumber = getRandomNumber(10);
+    const firstRandomNumber = getRandomNumber(25);
     const secondRandomNumber = getRandomNumber(10);
     const arrayOperators = ['+', '-', '*'];
     const index = getRandomNumber(arrayOperators.length - 1);
