@@ -31,7 +31,7 @@ const getGameBrainEven = () => {
         break;
       }
     } else {
-      result = `$'{answer}' ${"is wrong answer ;(. Correct answer was 'yes' or 'no'.\nLet's try again"}, ${name}!`;
+      result = `'${answer}' ${"is wrong answer ;(. Correct answer was 'yes' or 'no'.\nLet's try again"}, ${name}!`;
       console.log(result);
       break;
     }
