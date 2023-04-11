@@ -5,8 +5,8 @@ export const getQuestion = (question) => {
   return answer;
 };
 
-export const getGreeting = (text) => {
-  console.log(text);
+export const getGreeting = () => {
+  console.log('Welcome to the Brain Games');
 };
 
 export const getPersonalGreeting = (name) => {
