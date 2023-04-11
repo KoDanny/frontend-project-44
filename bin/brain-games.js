@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-import getQuestionsAboutName from '../src/cli.js';
+import { getQuestion, getGreeting, getPersonalGreeting } from '../src/cli.js';
 
-console.log('Welcome to the Brain Games');
+getGreeting('Welcome to the Brain Games!');
 
-console.log(`${'Hello'}, ${getQuestionsAboutName()}!`);
+const name = getQuestion('What is your name?');
+getPersonalGreeting(name);

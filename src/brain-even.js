@@ -1,19 +1,17 @@
-import readlineSync from 'readline-sync';
-import getQuestionsAboutName from './cli.js';
-
-const getRandomNumber = () => Math.round(Math.random() * 100);
+import {
+  getPersonalGreeting, getQuestion, getRandomNumber, getCongratulation,
+} from './cli.js';
 
 const getGameBrainEven = () => {
-  const name = getQuestionsAboutName();
-  console.log(`${'Hello'}, ${name}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  const name = getQuestion('What is your name?');
+  getPersonalGreeting(name);
+  const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
+  console.log(rule);
   let result = '';
   let correctAnswerCount = 0;
   for (let i = 0; i <= 2; i += 1) {
-    const randomNumber = getRandomNumber();
-    const question = `${'Question:'} ${randomNumber}`;
-    console.log(question);
-    const answer = readlineSync.question(`${'Your answer: '}`);
+    const randomNumber = getRandomNumber(100);
+    const answer = getQuestion(`${'Question:'} ${randomNumber}`);
     if (answer.toLowerCase() === 'yes') {
       if (randomNumber % 2 === 0) {
         console.log('Correct!');
@@ -39,8 +37,7 @@ const getGameBrainEven = () => {
     }
   }
   if (correctAnswerCount === 3) {
-    result = `${'Congratulations'}, ${name}!`;
-    console.log(result);
+    getCongratulation(name);
   }
 };
 

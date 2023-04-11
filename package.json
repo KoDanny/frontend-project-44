@@ -11,6 +11,7 @@
   "type": "module",
   "dependencies": {
     "brain-even": "^1.0.0",
+    "make": "^0.8.1",
     "node": "^19.8.1",
     "readline-sync": "^1.4.10"
   },
