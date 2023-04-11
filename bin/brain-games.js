@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import { getQuestion, getGreeting, getPersonalGreeting } from '../src/cli.js';
+import getGreeting from '../src/cli.js';
+import { getQuestion, getPersonalGreeting } from '../src/index.js';
 
 getGreeting();
 

@@ -1,6 +1,6 @@
 import {
   getPersonalGreeting, getQuestion, getRandomNumber, getCongratulation,
-} from './cli.js';
+} from './index.js';
 
 const getGameBrainEven = () => {
   const name = getQuestion('What is your name?');
