@@ -48,3 +48,16 @@ export const doMath = (firstNumber, operator, secondNumber) => {
   }
   return result;
 };
+
+export const getGreatestCommonDivisor = (firstNumber, secondNumber) => {
+  let a = firstNumber;
+  let b = secondNumber;
+  while (a !== 0 && b !== 0) {
+    if (a > b) {
+      a %= b;
+    } else {
+      b %= a;
+    }
+  }
+  return a + b;
+};
