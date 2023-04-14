@@ -1,5 +1,8 @@
 import {
-  getPersonalGreeting, getQuestion, getRandomNumber, getCongratulation,
+  getPersonalGreeting,
+  getQuestion,
+  getRandomNumber,
+  getCongratulation,
 } from './index.js';
 
 const getGameBrainEven = () => {
