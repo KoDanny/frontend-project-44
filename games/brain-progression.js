@@ -18,10 +18,10 @@ const getGameBrainProgression = (roundCount = 3, progressionLenght = 10) => {
     const progression = getProgression(firstNumber, step, progressionLenght);
     const numbers = progression.split(' ');
     const index = getRandomNumber(1, numbers.length - 1);
-    const secretNumber = numbers[index];
-    const progressionSecret = numbers.join(' ').replace(secretNumber, '..');
+    const correctAnswer = numbers[index];
+    numbers[index] = '..';
+    const progressionSecret = numbers.join(' ');
     const answer = getQuestion(`${progressionSecret}`);
-    const correctAnswer = secretNumber;
     const result = isCorrect(answer, correctAnswer, name);
     if (result) {
       correctAnswerCount += 1;
