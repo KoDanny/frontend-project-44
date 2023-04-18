@@ -14,7 +14,10 @@ export const getCongratulation = (name) => {
   console.log(result);
 };
 
-export const getRandomNumber = (max) => Math.round(Math.random() * max);
+export const getRandomNumber = (min, max) => {
+  const result = Math.round(Math.random() * (max - min) + min);
+  return result;
+};
 
 export const isCorrect = (answer, correctAnswer = '') => {
   let result = '';
@@ -60,4 +63,12 @@ export const getGreatestCommonDivisor = (firstNumber, secondNumber) => {
     }
   }
   return a + b;
+};
+
+export const getProgression = (firstNumber, step, numberCount) => {
+  let result = '';
+  for (let i = 1, number = firstNumber; i <= numberCount; i += 1, number += step) {
+    result = `${result} ${number}`;
+  }
+  return result;
 };
