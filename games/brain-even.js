@@ -21,8 +21,8 @@ const getGameBrainEven = (roundCount = 3) => {
     } else {
       break;
     }
+    getCongratulation(name, correctAnswerCount, roundCount);
   }
-  getCongratulation(name, correctAnswerCount, roundCount);
 };
 
 export default getGameBrainEven;
