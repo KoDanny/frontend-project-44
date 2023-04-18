@@ -3,6 +3,8 @@ import {
   getQuestion,
   getRandomNumber,
   getCongratulation,
+  getIncorrectResult,
+  isCorrect,
 } from './index.js';
 
 const getGameBrainEven = () => {
@@ -10,37 +12,21 @@ const getGameBrainEven = () => {
   getPersonalGreeting(name);
   const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
   console.log(rule);
-  let result = '';
   let correctAnswerCount = 0;
   for (let i = 0; i <= 2; i += 1) {
     const randomNumber = getRandomNumber(1, 100);
     const answer = getQuestion(`${'Question:'} ${randomNumber}`);
-    if (answer.toLowerCase() === 'yes') {
-      if (randomNumber % 2 === 0) {
-        console.log('Correct!');
-        correctAnswerCount += 1;
-      } else {
-        result = (`${"'yes' is wrong answer ;(. Correct answer was 'no'."}\n${"Let's try again"}, ${name}!`);
-        console.log(result);
-        break;
-      }
-    } else if (answer.toLowerCase() === 'no') {
-      if (randomNumber % 2 !== 0) {
-        console.log('Correct!');
-        correctAnswerCount += 1;
-      } else {
-        result = (`${"'no' is wrong answer ;(. Correct answer was 'yes'."}\n${"Let's try again"}, ${name}!`);
-        console.log(result);
-        break;
-      }
+    const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
+    if (isCorrect(answer, correctAnswer)) {
+      console.log('Correct!');
+      correctAnswerCount += 1;
     } else {
-      result = `'${answer}' ${"is wrong answer ;(. Correct answer was 'yes' or 'no'.\nLet's try again"}, ${name}!`;
-      console.log(result);
+      getIncorrectResult(answer, name, correctAnswer);
       break;
     }
-  }
-  if (correctAnswerCount === 3) {
-    getCongratulation(name);
+    if (correctAnswerCount === 3) {
+      getCongratulation(name);
+    }
   }
 };
 
