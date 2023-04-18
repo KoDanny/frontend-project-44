@@ -15,7 +15,7 @@ const getGameBrainGcd = (roundCount = 3) => {
   for (let i = 1; i <= roundCount; i += 1) {
     const firstNumber = getRandomNumber(1, 15) * 3;
     const secondNumber = getRandomNumber(1, 12) * 4;
-    const answer = getQuestion(`${firstNumber} & ${secondNumber}`);
+    const answer = getQuestion(`${firstNumber} ${secondNumber}`);
     const correctAnswer = getGreatestCommonDivisor(firstNumber, secondNumber);
     const result = isCorrect(+answer, correctAnswer, name);
     if (result) {
