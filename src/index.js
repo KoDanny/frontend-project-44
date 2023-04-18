@@ -67,11 +67,11 @@ export const getGreatestCommonDivisor = (firstNumber, secondNumber) => {
 };
 
 export const getProgression = (firstNumber, step, numberCount) => {
-  let result = '';
+  let result = [];
   for (let i = 1, number = firstNumber; i <= numberCount; i += 1, number += step) {
-    result = `${result} ${number}`;
+    result.push(number);
   }
-  return result.split(' ');
+  return result;
 };
 
 export const isPrime = (number) => {
