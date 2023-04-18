@@ -15,12 +15,11 @@ const getGameBrainProgression = (roundCount = 3, progressionLenght = 10) => {
   for (let i = 1; i <= roundCount; i += 1) {
     const firstNumber = getRandomNumber(0, 50);
     const step = getRandomNumber(2, 5);
-    const progression = getProgression(firstNumber, step, progressionLenght);
-    const numbers = progression.split(' ');
-    const index = getRandomNumber(1, numbers.length - 1);
-    const correctAnswer = numbers[index];
-    numbers[index] = '..';
-    const progressionSecret = numbers.join(' ');
+    const progressions = getProgression(firstNumber, step, progressionLenght);
+    const index = getRandomNumber(1, progressions.length - 1);
+    const correctAnswer = progressions[index];
+    progressions[index] = '..';
+    const progressionSecret = progressions.join(' ');
     const answer = getQuestion(`${progressionSecret}`);
     const result = isCorrect(answer, correctAnswer, name);
     if (result) {

@@ -71,7 +71,7 @@ export const getProgression = (firstNumber, step, numberCount) => {
   for (let i = 1, number = firstNumber; i <= numberCount; i += 1, number += step) {
     result = `${result} ${number}`;
   }
-  return result;
+  return result.split(' ');
 };
 
 export const isPrime = (number) => {
