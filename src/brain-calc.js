@@ -19,7 +19,7 @@ const getGameBrainCalc = () => {
     const firstRandomNumber = getRandomNumber(0, 25);
     const secondRandomNumber = getRandomNumber(0, 10);
     const arrayOperators = ['+', '-', '*'];
-    const index = getRandomNumber(arrayOperators.length - 1);
+    const index = getRandomNumber(0, arrayOperators.length - 1);
     const operator = arrayOperators[index];
     const answer = getQuestion(`${'Question:'} ${firstRandomNumber} ${operator} ${secondRandomNumber}`);
     const correctAnswer = doMath(firstRandomNumber, operator, secondRandomNumber);
