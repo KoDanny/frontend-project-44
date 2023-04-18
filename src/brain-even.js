@@ -6,7 +6,7 @@ import {
 } from './index.js';
 
 const getGameBrainEven = () => {
-  const name = getQuestion('What is your name?');
+  const name = getQuestion('May I have your name?');
   getPersonalGreeting(name);
   const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
   console.log(rule);
