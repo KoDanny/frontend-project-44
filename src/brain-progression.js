@@ -5,7 +5,6 @@ import {
   getCongratulation,
   isCorrect,
   getProgression,
-  getIncorrectResult,
   getRule,
 } from './index.js';
 

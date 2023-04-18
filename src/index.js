@@ -35,11 +35,6 @@ export const isCorrect = (answer, correctAnswer, name) => {
   return result;
 };
 
-export const getIncorrectResult = (answer, name, correctAnswer) => {
-  const result = (`'${answer}' ${'is wrong answer ;(.'} ${'Correct answer was'} '${correctAnswer}'.\n${"Let's try again"}, ${name}!`);
-  console.log(result);
-};
-
 export const doMath = (firstNumber, operator, secondNumber) => {
   let result = '';
   switch (operator) {
