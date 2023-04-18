@@ -13,7 +13,7 @@ const getGameBrainEven = () => {
   let result = '';
   let correctAnswerCount = 0;
   for (let i = 0; i <= 2; i += 1) {
-    const randomNumber = getRandomNumber(0, 100);
+    const randomNumber = getRandomNumber(1, 100);
     const answer = getQuestion(`${'Question:'} ${randomNumber}`);
     if (answer.toLowerCase() === 'yes') {
       if (randomNumber % 2 === 0) {
