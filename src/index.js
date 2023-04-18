@@ -19,9 +19,9 @@ export const getRandomNumber = (min, max) => {
   return result;
 };
 
-export const isCorrect = (answer, correctAnswer = '') => {
+export const isCorrect = (answer, correctAnswer) => {
   let result = '';
-  if (Number(answer) === correctAnswer) {
+  if (Number(answer) === correctAnswer || String(answer) === correctAnswer) {
     result = true;
   } else {
     result = false;
@@ -29,7 +29,7 @@ export const isCorrect = (answer, correctAnswer = '') => {
   return result;
 };
 
-export const getIncorrectResult = (answer, name = '', correctAnswer = '') => {
+export const getIncorrectResult = (answer, name, correctAnswer) => {
   const result = (`'${answer}' ${'is wrong answer ;(.'} ${'Correct answer was'} '${correctAnswer}'.\n${"Let's try again"}, ${name}!`);
   console.log(result);
 };
