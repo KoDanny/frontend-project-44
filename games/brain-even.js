@@ -5,7 +5,7 @@ import {
   getCongratulation,
   isCorrect,
   getRule,
-} from './index.js';
+} from '../src/index.js';
 
 const getGameBrainEven = (roundCount = 3) => {
   const name = getPersonalGreeting('May I have your name?');

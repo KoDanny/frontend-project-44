@@ -6,7 +6,7 @@ import {
   isCorrect,
   getProgression,
   getRule,
-} from './index.js';
+} from '../src/index.js';
 
 const getGameBrainProgression = (roundCount = 3, progressionLenght = 10) => {
   const name = getPersonalGreeting('May I have your name?');

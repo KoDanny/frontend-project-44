@@ -6,7 +6,7 @@ import {
   isCorrect,
   getRandomNumber,
   isPrime,
-} from './index.js';
+} from '../src/index.js';
 
 const getGameBrainPrime = (roundCount = 3) => {
   const name = getPersonalGreeting('May I have your name?');

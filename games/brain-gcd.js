@@ -6,7 +6,7 @@ import {
   getGreatestCommonDivisor,
   getRule,
   isCorrect,
-} from './index.js';
+} from '../src/index.js';
 
 const getGameBrainGcd = (roundCount = 3) => {
   const name = getPersonalGreeting('May I have your name?');
