@@ -1,17 +1,21 @@
 import readlineSync from 'readline-sync';
 
 export const getQuestion = (question) => {
-  const answer = readlineSync.question(`${question}\n${'Your answer:'} `);
+  const answer = readlineSync.question(`${'Question:'} ${question}\n${'Your answer:'} `);
   return answer;
 };
 
-export const getPersonalGreeting = (name) => {
+export const getPersonalGreeting = (question) => {
+  const name = readlineSync.question(`${question} `);
   console.log(`${'Hello'}, ${name}!`);
+  return name;
 };
 
-export const getCongratulation = (name) => {
-  const result = `${'Congratulations'}, ${name}!`;
-  console.log(result);
+export const getCongratulation = (name, correctAnswerCount, maxCount) => {
+  if (correctAnswerCount === maxCount) {
+    const result = `${'Congratulations'}, ${name}!`;
+    console.log(result);
+  }
 };
 
 export const getRandomNumber = (min, max) => {
@@ -19,11 +23,13 @@ export const getRandomNumber = (min, max) => {
   return result;
 };
 
-export const isCorrect = (answer, correctAnswer) => {
+export const isCorrect = (answer, correctAnswer, name) => {
   let result = '';
-  if (Number(answer) === correctAnswer || String(answer) === correctAnswer) {
+  if (answer === correctAnswer) {
+    console.log('Correct!');
     result = true;
   } else {
+    console.log(`'${answer}' ${'is wrong answer ;(.'} ${'Correct answer was'} '${correctAnswer}'.\n${"Let's try again"}, ${name}!`);
     result = false;
   }
   return result;
@@ -74,16 +80,14 @@ export const getProgression = (firstNumber, step, numberCount) => {
 };
 
 export const isPrime = (number) => {
-  let result = true;
-  if (number <= 1) {
-    result = false;
-  } else if (number > 1) {
-    for (let i = 2; i < number; i += 1) {
-      if (number % i === 0) {
-        result = false;
-        break;
-      }
+  for (let divisor = 2; divisor < number; divisor += 1) {
+    if (number % divisor === 0) {
+      return false;
     }
   }
-  return result;
+  return true;
+};
+
+export const getRule = (text) => {
+  console.log(text);
 };

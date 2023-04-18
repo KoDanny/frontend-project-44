@@ -3,31 +3,26 @@ import {
   getQuestion,
   getRandomNumber,
   getCongratulation,
-  getIncorrectResult,
   isCorrect,
+  getRule,
 } from './index.js';
 
-const getGameBrainEven = () => {
-  const name = getQuestion('May I have your name?');
-  getPersonalGreeting(name);
-  const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
-  console.log(rule);
+const getGameBrainEven = (roundCount = 3) => {
+  const name = getPersonalGreeting('May I have your name?');
+  getRule('Answer "yes" if the number is even, otherwise answer "no".');
   let correctAnswerCount = 0;
-  for (let i = 0; i <= 2; i += 1) {
+  for (let i = 1; i <= roundCount; i += 1) {
     const randomNumber = getRandomNumber(1, 100);
-    const answer = getQuestion(`${'Question:'} ${randomNumber}`);
+    const answer = getQuestion(`${randomNumber}`).toLowerCase();
     const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
-    if (isCorrect(answer, correctAnswer)) {
-      console.log('Correct!');
+    const result = isCorrect(answer, correctAnswer, name);
+    if (result) {
       correctAnswerCount += 1;
     } else {
-      getIncorrectResult(answer, name, correctAnswer);
       break;
     }
-    if (correctAnswerCount === 3) {
-      getCongratulation(name);
-    }
   }
+  getCongratulation(name, correctAnswerCount, roundCount);
 };
 
 export default getGameBrainEven;

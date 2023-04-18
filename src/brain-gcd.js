@@ -3,36 +3,28 @@ import {
   getQuestion,
   getRandomNumber,
   getCongratulation,
-  isCorrect,
   getGreatestCommonDivisor,
-  getIncorrectResult,
+  getRule,
+  isCorrect,
 } from './index.js';
 
-const getGameBrainGcd = () => {
-  const name = getQuestion('May I have your name?');
-  getPersonalGreeting(name);
-  const rule = 'Find the greatest common divisor of given numbers.';
-  console.log(rule);
+const getGameBrainGcd = (roundCount = 3) => {
+  const name = getPersonalGreeting('May I have your name?');
+  getRule('Find the greatest common divisor of given numbers.');
   let correctAnswerCount = 0;
-  const roundCount = 3;
-  let result = '';
   for (let i = 1; i <= roundCount; i += 1) {
     const firstNumber = getRandomNumber(1, 15) * 3;
     const secondNumber = getRandomNumber(1, 12) * 4;
-    const answer = getQuestion(`${'Question:'} ${firstNumber} & ${secondNumber}`);
+    const answer = getQuestion(`${firstNumber} & ${secondNumber}`);
     const correctAnswer = getGreatestCommonDivisor(firstNumber, secondNumber);
-    if (isCorrect(answer, correctAnswer)) {
-      result = 'Correct!';
-      console.log(result);
+    const result = isCorrect(+answer, correctAnswer, name);
+    if (result) {
       correctAnswerCount += 1;
-    } else if (!isCorrect(answer, correctAnswer)) {
-      getIncorrectResult(answer, name, correctAnswer);
+    } else {
       break;
     }
-    if (correctAnswerCount === 3) {
-      result = getCongratulation(name);
-    }
   }
+  getCongratulation(name, correctAnswerCount, roundCount);
 };
 
 export default getGameBrainGcd;

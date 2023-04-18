@@ -3,38 +3,31 @@ import {
   getQuestion,
   getRandomNumber,
   getCongratulation,
-  isCorrect,
-  getIncorrectResult,
   doMath,
+  getRule,
+  isCorrect,
 } from './index.js';
 
-const getGameBrainCalc = () => {
-  const name = getQuestion('May I have your name?');
-  getPersonalGreeting(name);
-  const rule = 'What is the result of the expression?';
-  console.log(rule);
+const getGameBrainCalc = (roundCount = 3) => {
+  const name = getPersonalGreeting('May I have your name?');
+  getRule('What is the result of the expression?');
   let correctAnswerCount = 0;
-  let result = '';
-  for (let i = 1; i <= 3; i += 1) {
+  for (let i = 1; i <= roundCount; i += 1) {
     const firstRandomNumber = getRandomNumber(0, 25);
     const secondRandomNumber = getRandomNumber(0, 10);
     const arrayOperators = ['+', '-', '*'];
     const index = getRandomNumber(0, arrayOperators.length - 1);
     const operator = arrayOperators[index];
-    const answer = getQuestion(`${'Question:'} ${firstRandomNumber} ${operator} ${secondRandomNumber}`);
+    const answer = getQuestion(`${firstRandomNumber} ${operator} ${secondRandomNumber}`);
     const correctAnswer = doMath(firstRandomNumber, operator, secondRandomNumber);
-    if (isCorrect(answer, correctAnswer)) {
-      result = 'Correct!';
-      console.log(result);
+    const result = isCorrect(+answer, correctAnswer, name);
+    if (result) {
       correctAnswerCount += 1;
-    } else if (!isCorrect(answer, correctAnswer)) {
-      getIncorrectResult(answer, name, correctAnswer);
+    } else {
       break;
     }
-    if (correctAnswerCount === 3) {
-      result = getCongratulation(name);
-    }
   }
+  getCongratulation(name, correctAnswerCount, roundCount);
 };
 
 export default getGameBrainCalc;
