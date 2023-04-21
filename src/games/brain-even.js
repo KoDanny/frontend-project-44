@@ -3,7 +3,7 @@ import getRandomNumber from '../utils.js';
 
 const getRoundEven = (roundCount) => {
   const rounds = [];
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < roundCount; i += 1) {
     let result = [];
     const randomNumber = getRandomNumber(1, 100);
     result.push(randomNumber);

@@ -6,7 +6,7 @@ const getSecretProgression = (firstNumber, step, numberCount) => {
   for (let i = 1, number = firstNumber; i <= numberCount; i += 1, number += step) {
     result.push(number);
   }
-  return result
+  return result;
 };
 const getRoundProgression = (roundCount) => {
   const rounds = [];
