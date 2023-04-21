@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-import getGameBrainProgression from '../games/brain-progression.js';
-import getGreeting from '../src/cli.js';
+import getGameBrainProgression from '../src/games/brain-progression.js';
 
-getGreeting();
 getGameBrainProgression();

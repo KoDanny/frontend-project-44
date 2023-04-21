@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-import getGameBrainGcd from '../games/brain-gcd.js';
-import getGreeting from '../src/cli.js';
+import getGameBrainGcd from '../src/games/brain-gcd.js';
 
-getGreeting();
 getGameBrainGcd();

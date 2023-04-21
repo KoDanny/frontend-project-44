@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-import getGameBrainPrime from '../games/brain-prime.js';
-import getGreeting from '../src/cli.js';
+import getGameBrainPrime from '../src/games/brain-prime.js';
 
-getGreeting();
 getGameBrainPrime();
