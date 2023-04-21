@@ -1,31 +1,25 @@
 import readlineSync from 'readline-sync';
 
-export const getQuestion = (question) => {
+const getQuestion = (question) => {
   const answer = readlineSync.question(`${'Question:'} ${question}\n${'Your answer:'} `);
   return answer;
 };
-
-export const getPersonalGreeting = (question) => {
+const getGreeting = () => {
+  console.log('Welcome to the Brain Games!');
+  const question = 'May I have your name?';
   const name = readlineSync.question(`${question} `);
   console.log(`${'Hello'}, ${name}!`);
   return name;
 };
-
-export const getCongratulation = (name, correctAnswerCount, maxCount) => {
-  if (correctAnswerCount === maxCount) {
+const getCongratulation = (name, correctAnswerCount, roundCount) => {
+  if (correctAnswerCount === roundCount) {
     const result = `${'Congratulations'}, ${name}!`;
     console.log(result);
   }
 };
-
-export const getRandomNumber = (min, max) => {
-  const result = Math.round(Math.random() * (max - min) + min);
-  return result;
-};
-
-export const isCorrect = (answer, correctAnswer, name) => {
-  let result = '';
-  if (answer === correctAnswer) {
+const isCorrect = (answer, correctAnswer, name) => {
+  let result;
+  if (answer.toLowerCase() === correctAnswer || Number(answer) === correctAnswer) {
     console.log('Correct!');
     result = true;
   } else {
@@ -34,58 +28,22 @@ export const isCorrect = (answer, correctAnswer, name) => {
   }
   return result;
 };
-
-export const doMath = (firstNumber, operator, secondNumber) => {
-  let result = '';
-  switch (operator) {
-    case '+':
-      result = firstNumber + secondNumber;
-      break;
-    case '-':
-      result = firstNumber - secondNumber;
-      break;
-    case '*':
-      result = firstNumber * secondNumber;
-      break;
-    default:
-      result = null;
-  }
-  return result;
-};
-
-export const getGreatestCommonDivisor = (firstNumber, secondNumber) => {
-  let a = firstNumber;
-  let b = secondNumber;
-  while (a !== 0 && b !== 0) {
-    if (a > b) {
-      a %= b;
+const getGame = (rule, rounds) => {
+  const name = getGreeting();
+  console.log(rule);
+  let correctAnswerCount = 0;
+  const roundCount = rounds.length;
+  for (let i = 0; i < roundCount; i += 1) {
+    const [question, correctAnswer] = rounds[i];
+    const answer = getQuestion(question);
+    const roundResult = isCorrect(answer, correctAnswer, name);
+    if (roundResult) {
+      correctAnswerCount += 1;
     } else {
-      b %= a;
+      break;
     }
   }
-  return a + b;
+  getCongratulation(name, correctAnswerCount, roundCount);
 };
 
-export const getProgression = (firstNumber, step, numberCount) => {
-  const result = [];
-  for (let i = 1, number = firstNumber; i <= numberCount; i += 1, number += step) {
-    result.push(number);
-  }
-  return result;
-};
-
-export const isPrime = (number) => {
-  if (number < 2) {
-    return false;
-  }
-  for (let divisor = 2; divisor < number; divisor += 1) {
-    if (number % divisor === 0) {
-      return false;
-    }
-  }
-  return true;
-};
-
-export const getRule = (text) => {
-  console.log(text);
-};
+export default getGame;
