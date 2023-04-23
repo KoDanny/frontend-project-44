@@ -1,4 +1,4 @@
-import getGame from '../index.js';
+import { getGame, roundCount } from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const isPrime = (number) => {
@@ -12,7 +12,7 @@ const isPrime = (number) => {
   }
   return true;
 };
-const getRoundPrime = (roundCount) => {
+const getRoundPrime = () => {
   const rounds = [];
   for (let i = 0; i < roundCount; i += 1) {
     let result = [];
@@ -32,7 +32,7 @@ const getRoundPrime = (roundCount) => {
 };
 const getGameBrainPrime = () => {
   const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  const rounds = getRoundPrime(3);
+  const rounds = getRoundPrime();
   getGame(rule, rounds);
 };
 

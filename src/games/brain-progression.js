@@ -1,4 +1,4 @@
-import getGame from '../index.js';
+import { getGame, roundCount } from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const getSecretProgression = (firstNumber, step, numberCount) => {
@@ -8,7 +8,7 @@ const getSecretProgression = (firstNumber, step, numberCount) => {
   }
   return result;
 };
-const getRoundProgression = (roundCount) => {
+const getRoundProgression = () => {
   const rounds = [];
   for (let i = 0; i < roundCount; i += 1) {
     let result = [];
@@ -29,7 +29,7 @@ const getRoundProgression = (roundCount) => {
 };
 const getGameBrainProgression = () => {
   const rule = 'What number is missing in the progression?';
-  const rounds = getRoundProgression(3);
+  const rounds = getRoundProgression();
   getGame(rule, rounds);
 };
 

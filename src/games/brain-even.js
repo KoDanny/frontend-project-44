@@ -1,7 +1,7 @@
-import getGame from '../index.js';
+import { getGame, roundCount } from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const getRoundEven = (roundCount) => {
+const getRoundEven = () => {
   const rounds = [];
   for (let i = 0; i < roundCount; i += 1) {
     let result = [];
@@ -19,7 +19,7 @@ const getRoundEven = (roundCount) => {
 };
 const getGameBrainEven = () => {
   const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
-  const rounds = getRoundEven(3);
+  const rounds = getRoundEven();
   getGame(rule, rounds);
 };
 
