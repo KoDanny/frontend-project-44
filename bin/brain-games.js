@@ -1,4 +1,7 @@
 #!/usr/bin/env node
-import getGreeting from '../src/index.js';
+import readlineSync from 'readline-sync';
+import getGameGreeting from '../src/cli.js';
 
-getGreeting();
+getGameGreeting();
+const userName = readlineSync.question(`${'May I have your name?'} `);
+console.log(`${'Hello'}, ${userName}!`);
