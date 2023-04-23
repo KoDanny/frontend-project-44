@@ -17,6 +17,6 @@
 *Node.js 19.8.1 и выше*
 ### Установка:
 ```plaintext
-npm install
+npm install @hexlet/code
 ```
 
