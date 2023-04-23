@@ -18,7 +18,8 @@ const doMath = (firstNumber, operator, secondNumber) => {
   }
   return result;
 };
-const getRoundCalc = () => {
+
+const getGameBrainCalc = () => {
   const rounds = [];
   for (let i = 0; i < roundCount; i += 1) {
     let result = [];
@@ -34,11 +35,7 @@ const getRoundCalc = () => {
     rounds.push(result);
     result = [];
   }
-  return rounds;
-};
-const getGameBrainCalc = () => {
   const rule = 'What is the result of the expression?';
-  const rounds = getRoundCalc();
   getGame(rule, rounds);
 };
 

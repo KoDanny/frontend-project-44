@@ -8,7 +8,8 @@ const getSecretProgression = (firstNumber, step, numberCount) => {
   }
   return result;
 };
-const getRoundProgression = () => {
+
+const getGameBrainProgression = () => {
   const rounds = [];
   for (let i = 0; i < roundCount; i += 1) {
     let result = [];
@@ -25,11 +26,7 @@ const getRoundProgression = () => {
     rounds.push(result);
     result = [];
   }
-  return rounds;
-};
-const getGameBrainProgression = () => {
   const rule = 'What number is missing in the progression?';
-  const rounds = getRoundProgression();
   getGame(rule, rounds);
 };
 

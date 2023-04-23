@@ -13,7 +13,8 @@ const getGreatestCommonDivisor = (firstNumber, secondNumber) => {
   }
   return a + b;
 };
-const getRoundGcd = () => {
+
+const getGameBrainGcd = () => {
   const rounds = [];
   for (let i = 0; i < roundCount; i += 1) {
     let result = [];
@@ -26,11 +27,7 @@ const getRoundGcd = () => {
     rounds.push(result);
     result = [];
   }
-  return rounds;
-};
-const getGameBrainGcd = () => {
   const rule = 'Find the greatest common divisor of given numbers.';
-  const rounds = getRoundGcd();
   getGame(rule, rounds);
 };
 

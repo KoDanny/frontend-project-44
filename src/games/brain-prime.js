@@ -12,7 +12,8 @@ const isPrime = (number) => {
   }
   return true;
 };
-const getRoundPrime = () => {
+
+const getGameBrainPrime = () => {
   const rounds = [];
   for (let i = 0; i < roundCount; i += 1) {
     let result = [];
@@ -28,11 +29,7 @@ const getRoundPrime = () => {
     rounds.push(result);
     result = [];
   }
-  return rounds;
-};
-const getGameBrainPrime = () => {
   const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  const rounds = getRoundPrime();
   getGame(rule, rounds);
 };
 
