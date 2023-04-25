@@ -10,8 +10,8 @@ const doMath = (firstNumber, operator, secondNumber) => {
     case '*':
       return firstNumber * secondNumber;
     default:
-      break;
-  }
+      return new Error(['Operator not found']);
+  } 
 };
 
 const getRoundBrainCalc = () => {
