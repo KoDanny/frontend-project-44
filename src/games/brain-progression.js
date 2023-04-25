@@ -9,25 +9,26 @@ const getSecretProgression = (firstNumber, step, numberCount) => {
   return result;
 };
 
-const getGameBrainProgression = () => {
-  const rounds = [];
-  for (let i = 0; i < roundCount; i += 1) {
-    let result = [];
-    const firstNumber = getRandomNumber(1, 50);
-    const numberCount = getRandomNumber(6, 10);
-    const step = getRandomNumber(2, 4);
-    const progressions = getSecretProgression(firstNumber, step, numberCount);
-    const index = getRandomNumber(0, progressions.length - 1);
-    const correctAnswer = progressions[index];
-    progressions[index] = '..';
-    const question = progressions.join(' ');
-    result.push(question);
-    result.push(correctAnswer);
-    rounds.push(result);
-    result = [];
-  }
-  const rule = 'What number is missing in the progression?';
-  getGame(rule, rounds);
+const getRoundBrainProgression = () => {
+  const result = [];
+  const firstNumber = getRandomNumber(1, 50);
+  const numberCount = getRandomNumber(6, 10);
+  const step = getRandomNumber(2, 4);
+  const progressions = getSecretProgression(firstNumber, step, numberCount);
+  const index = getRandomNumber(0, progressions.length - 1);
+  const correctAnswer = `${progressions[index]}`;
+  progressions[index] = '..';
+  const question = progressions.join(' ');
+  result.push(question);
+  result.push(correctAnswer);
+  return result;
 };
 
-export default getGameBrainProgression;
+export default () => {
+  const rule = 'What number is missing in the progression?';
+  const rounds = [];
+  for (let i = 0; i < roundCount; i += 1) {
+    rounds.push(getRoundBrainProgression());
+  }
+  getGame(rule, rounds);
+};

@@ -14,21 +14,22 @@ const getGreatestCommonDivisor = (firstNumber, secondNumber) => {
   return a + b;
 };
 
-const getGameBrainGcd = () => {
-  const rounds = [];
-  for (let i = 0; i < roundCount; i += 1) {
-    let result = [];
-    const firstNumber = getRandomNumber(1, 15) * 3;
-    const secondNumber = getRandomNumber(1, 12) * 4;
-    const question = `${firstNumber} ${secondNumber}`;
-    result.push(question);
-    const correctAnswer = getGreatestCommonDivisor(firstNumber, secondNumber);
-    result.push(correctAnswer);
-    rounds.push(result);
-    result = [];
-  }
-  const rule = 'Find the greatest common divisor of given numbers.';
-  getGame(rule, rounds);
+const getRoundBrainGcd = () => {
+  const result = [];
+  const firstNumber = getRandomNumber(1, 15) * 3;
+  const secondNumber = getRandomNumber(1, 12) * 4;
+  const question = `${firstNumber} ${secondNumber}`;
+  result.push(question);
+  const correctAnswer = `${getGreatestCommonDivisor(firstNumber, secondNumber)}`;
+  result.push(correctAnswer);
+  return result;
 };
 
-export default getGameBrainGcd;
+export default () => {
+  const rule = 'Find the greatest common divisor of given numbers.';
+  const rounds = [];
+  for (let i = 0; i < roundCount; i += 1) {
+    rounds.push(getRoundBrainGcd());
+  }
+  getGame(rule, rounds);
+};
