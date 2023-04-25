@@ -11,7 +11,7 @@ const doMath = (firstNumber, operator, secondNumber) => {
       return firstNumber * secondNumber;
     default:
       return new Error(['Operator not found']);
-  } 
+  }
 };
 
 const getRoundBrainCalc = () => {
