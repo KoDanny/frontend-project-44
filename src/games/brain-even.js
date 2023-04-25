@@ -9,7 +9,7 @@ const isEven = (number) => {
   return result;
 };
 
-const getRoundGemeEven = () => {
+const getRoundBrainEven = () => {
   const result = [];
   const randomNumber = getRandomNumber(1, 100);
   result.push(randomNumber);
@@ -25,7 +25,7 @@ export default () => {
   const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
   const rounds = [];
   for (let i = 0; i < roundCount; i += 1) {
-    rounds.push(getRoundGemeEven());
+    rounds.push(getRoundBrainEven());
   }
   getGame(rule, rounds);
 };
