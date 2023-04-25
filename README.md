@@ -4,19 +4,31 @@
 
 ### Описание проекта:
 *Математические мини-игры*
-
-| Игра 							                                                          |Команда запуска |
-|--|--|
-| [***BrainCalc***](https://asciinema.org/a/18KERm6Fzi3kICaqgjrD5jzNg)         |*brain-calc* |
-| [***BrainEven***](https://asciinema.org/a/QwYsBnf37PUD0SYPXXXdtbwgo)         |*brain-even* |
-| [***BrainGcd***](https://asciinema.org/a/6RAoEjVQ0g641aVqtnNW1CDjp)          |*brain-gcd*  |
-| [***BrainProgression***](https://asciinema.org/a/yNcoomX5rGf2xjVlekp2ZynxV)  |*brain-progression* |
-| [***BrainPrime***](https://asciinema.org/a/aVNP1iVl87DSXA5q33uB6X53W)        |*brain-prime*|
-
 ### Требования:
 *Node.js 19.8.1 и выше*
 ### Установка:
 ```plaintext
 npm install @hexlet/code
+```
+### Игры:
+***BrainCalc*** **([asciinema](https://asciinema.org/a/580423))**
+```plaintext
+brain-calc
+```
+***BrainEven*** **([asciinema](https://asciinema.org/a/580415))**
+```plaintext
+brain-even
+```
+***BrainGcd*** **([asciinema](https://asciinema.org/a/580425))**
+```plaintext
+brain-gcd
+```
+***BrainProgression*** **([asciinema](https://asciinema.org/a/580426))**
+```plaintext
+brain-progression
+```
+***BrainPrime*** **([asciinema](https://asciinema.org/a/580427))**
+```plaintext
+brain-prime
 ```
 
