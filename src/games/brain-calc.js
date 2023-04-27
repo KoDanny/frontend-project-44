@@ -1,4 +1,4 @@
-import { getGame, roundCount } from '../index.js';
+import runGame from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const description = 'What is the result of the expression?';
@@ -28,9 +28,5 @@ const getRoundBrainCalc = () => {
 };
 
 export default () => {
-  const rounds = [];
-  for (let i = 0; i < roundCount; i += 1) {
-    rounds.push(getRoundBrainCalc());
-  }
-  getGame(description, rounds);
+  runGame(description, getRoundBrainCalc);
 };

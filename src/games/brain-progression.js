@@ -1,21 +1,21 @@
-import { getGame, roundCount } from '../index.js';
+import runGame from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const description = 'What number is missing in the progression?';
-const numberCount = getRandomNumber(6, 12);
+const length = getRandomNumber(8, 12);
 
 const getSecretProgression = (start, step) => {
   const result = [];
-  for (let i = 1, number = start; i <= numberCount; i += 1, number += step) {
+  for (let i = 1, number = start; i <= length; i += 1, number += step) {
     result.push(number);
   }
   return result;
 };
 
 const getRoundBrainProgression = () => {
-  const firstNumber = getRandomNumber(1, 50);
+  const start = getRandomNumber(1, 50);
   const step = getRandomNumber(1, 4);
-  const progressions = getSecretProgression(firstNumber, step);
+  const progressions = getSecretProgression(start, step);
   const index = getRandomNumber(0, progressions.length - 1);
   const correctAnswer = `${progressions[index]}`;
   progressions[index] = '..';
@@ -24,9 +24,5 @@ const getRoundBrainProgression = () => {
 };
 
 export default () => {
-  const rounds = [];
-  for (let i = 0; i < roundCount; i += 1) {
-    rounds.push(getRoundBrainProgression());
-  }
-  getGame(description, rounds);
+  runGame(description, getRoundBrainProgression);
 };
