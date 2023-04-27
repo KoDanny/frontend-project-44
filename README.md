@@ -11,28 +11,28 @@
 npm install @hexlet/code
 ```
 ### Игры:
-####***BrainCalc*** 
+#### ***BrainCalc*** 
 ```plaintext
 brain-calc
 ```
 [![asciicast](https://asciinema.org/a/580423.svg)](https://asciinema.org/a/580423)
-####***BrainEven***
+#### ***BrainEven***
 ```plaintext
 brain-even
 ```
 [![asciicast](https://asciinema.org/a/580415.svg)](https://asciinema.org/a/580415)
 
-####***BrainGcd***
+#### ***BrainGcd***
 ```plaintext
 brain-gcd
 ```
 [![asciicast](https://asciinema.org/a/580425.svg)](https://asciinema.org/a/580425)
-####***BrainProgression***
+#### ***BrainProgression***
 ```plaintext
 brain-progression
 ```
 [![asciicast](https://asciinema.org/a/580426.svg)](https://asciinema.org/a/580426)
-####***BrainPrime***
+#### ***BrainPrime***
 ```plaintext
 brain-prime
 ```
