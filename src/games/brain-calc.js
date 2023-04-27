@@ -3,14 +3,14 @@ import getRandomNumber from '../utils.js';
 
 const description = 'What is the result of the expression?';
 
-const doMath = (firstNumber, operator, secondNumber) => {
+const doMath = (firstNum, operator, secondNum) => {
   switch (operator) {
     case '+':
-      return firstNumber + secondNumber;
+      return firstNum + secondNum;
     case '-':
-      return firstNumber - secondNumber;
+      return firstNum - secondNum;
     case '*':
-      return firstNumber * secondNumber;
+      return firstNum * secondNum;
     default:
       throw new Error('Operator not found');
   }
