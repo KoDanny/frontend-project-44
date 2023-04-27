@@ -1,9 +1,11 @@
 import { getGame, roundCount } from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const getGreatestCommonDivisor = (firstNumber, secondNumber) => {
-  let a = firstNumber;
-  let b = secondNumber;
+const description = 'Find the greatest common divisor of given numbers.';
+
+const getGreatestCommonDivisor = (firstNum, secondNum) => {
+  let a = firstNum;
+  let b = secondNum;
   while (a !== 0 && b !== 0) {
     if (a > b) {
       a %= b;
@@ -15,21 +17,17 @@ const getGreatestCommonDivisor = (firstNumber, secondNumber) => {
 };
 
 const getRoundBrainGcd = () => {
-  const result = [];
   const firstNumber = getRandomNumber(1, 15) * 3;
   const secondNumber = getRandomNumber(1, 12) * 4;
   const question = `${firstNumber} ${secondNumber}`;
-  result.push(question);
   const correctAnswer = `${getGreatestCommonDivisor(firstNumber, secondNumber)}`;
-  result.push(correctAnswer);
-  return result;
+  return [question, correctAnswer];
 };
 
 export default () => {
-  const rule = 'Find the greatest common divisor of given numbers.';
   const rounds = [];
   for (let i = 0; i < roundCount; i += 1) {
     rounds.push(getRoundBrainGcd());
   }
-  getGame(rule, rounds);
+  getGame(description, rounds);
 };
