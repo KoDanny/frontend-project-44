@@ -7,10 +7,8 @@ const runGame = (description, generateRoundFunc) => {
   const name = readlineSync.question(`${'May I have your name?'} `);
   console.log(`${'Hello'}, ${name}!`);
   console.log(description);
-  const rounds = [];
   for (let i = 0; i < roundCount; i += 1) {
-    rounds.push(generateRoundFunc());
-    const [question, correctAnswer] = rounds[i];
+    const [question, correctAnswer] = generateRoundFunc();
     const answer = readlineSync.question(`${'Question:'} ${question}\n${'Your answer:'} `);
     const isCorrect = answer.toLowerCase() === correctAnswer;
     if (!isCorrect) {

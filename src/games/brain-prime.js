@@ -17,11 +17,7 @@ const isPrime = (number) => {
 
 const getRoundBrainPrime = () => {
   const question = getRandomNumber(0, 20);
-  let correctAnswer = 'no';
-  const primeNumber = isPrime(question);
-  if (primeNumber) {
-    correctAnswer = 'yes';
-  }
+  const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return [question, correctAnswer];
 };
 

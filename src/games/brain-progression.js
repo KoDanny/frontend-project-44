@@ -2,11 +2,11 @@ import runGame from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const description = 'What number is missing in the progression?';
-const length = getRandomNumber(8, 12);
+const lengthProgression = 10;
 
 const getSecretProgression = (start, step) => {
   const result = [];
-  for (let i = 1, number = start; i <= length; i += 1, number += step) {
+  for (let i = 1, number = start; i <= lengthProgression; i += 1, number += step) {
     result.push(number);
   }
   return result;

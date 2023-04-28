@@ -7,10 +7,7 @@ const isEven = (number) => number % 2 === 0;
 
 const getRoundBrainEven = () => {
   const question = getRandomNumber(1, 100);
-  let correctAnswer = 'no';
-  if (isEven(question)) {
-    correctAnswer = 'yes';
-  }
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
   return [question, correctAnswer];
 };
 
