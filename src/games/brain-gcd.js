@@ -24,4 +24,6 @@ const getRoundBrainGcd = () => {
   return [question, correctAnswer];
 };
 
-export default () => runGame(description, getRoundBrainGcd);
+export default () => {
+  runGame(description, getRoundBrainGcd);
+};

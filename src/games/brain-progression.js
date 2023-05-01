@@ -23,4 +23,6 @@ const getRoundBrainProgression = () => {
   return [question, correctAnswer];
 };
 
-export default () => runGame(description, getRoundBrainProgression);
+export default () => {
+  runGame(description, getRoundBrainProgression);
+};

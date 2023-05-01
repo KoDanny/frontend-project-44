@@ -21,4 +21,6 @@ const getRoundBrainPrime = () => {
   return [question, correctAnswer];
 };
 
-export default () => runGame(description, getRoundBrainPrime);
+export default () => {
+  runGame(description, getRoundBrainPrime);
+};
