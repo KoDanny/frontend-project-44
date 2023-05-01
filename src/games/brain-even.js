@@ -11,6 +11,4 @@ const getRoundBrainEven = () => {
   return [question, correctAnswer];
 };
 
-export default () => {
-  runGame(description, getRoundBrainEven);
-};
+export default () => runGame(description, getRoundBrainEven);
