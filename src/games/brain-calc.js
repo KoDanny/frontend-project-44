@@ -27,6 +27,4 @@ const getRoundBrainCalc = () => {
   return [question, correctAnswer];
 };
 
-export default () => {
-  runGame(description, getRoundBrainCalc);
-};
+export default () => runGame(description, getRoundBrainCalc);
