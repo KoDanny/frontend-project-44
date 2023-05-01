@@ -17,8 +17,8 @@ const getGreatestCommonDivisor = (firstNum, secondNum) => {
 };
 
 const getRoundBrainGcd = () => {
-  const firstNumber = getRandomNumber(1, 15) * 3;
-  const secondNumber = getRandomNumber(1, 12) * 4;
+  const firstNumber = getRandomNumber(1, 15);
+  const secondNumber = getRandomNumber(1, 15);
   const question = `${firstNumber} ${secondNumber}`;
   const correctAnswer = `${getGreatestCommonDivisor(firstNumber, secondNumber)}`;
   return [question, correctAnswer];
